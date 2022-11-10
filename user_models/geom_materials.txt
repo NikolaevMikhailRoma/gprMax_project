@@ -1,0 +1,103 @@
+#material: 1 inf 1 0 pec
+#material: 1 0 1 0 free_space
+#material: 1 0 1 0 space
+#material: 3.67822 0.0109054 1 0 |0.0035|
+#add_dispersion_debye: 1 0.0191009 9.231e-12 |0.0035|
+#material: 3.93309 0.0165236 1 0 |0.0086|
+#add_dispersion_debye: 1 0.0704761 9.231e-12 |0.0086|
+#material: 4.16545 0.0205139 1 0 |0.0137|
+#add_dispersion_debye: 1 0.139061 9.231e-12 |0.0137|
+#material: 4.38366 0.0237684 1 0 |0.0188|
+#add_dispersion_debye: 1 0.220869 9.231e-12 |0.0188|
+#material: 4.59147 0.0265794 1 0 |0.0239|
+#add_dispersion_debye: 1 0.313802 9.231e-12 |0.0239|
+#material: 4.79108 0.0290859 1 0 |0.0289|
+#add_dispersion_debye: 1 0.416508 9.231e-12 |0.0289|
+#material: 4.98393 0.0313671 1 0 |0.0340|
+#add_dispersion_debye: 1 0.528021 9.231e-12 |0.0340|
+#material: 5.17106 0.0334729 1 0 |0.0391|
+#add_dispersion_debye: 1 0.647611 9.231e-12 |0.0391|
+#material: 5.35323 0.0354373 1 0 |0.0442|
+#add_dispersion_debye: 1 0.774695 9.231e-12 |0.0442|
+#material: 5.53106 0.0372846 1 0 |0.0493|
+#add_dispersion_debye: 1 0.908801 9.231e-12 |0.0493|
+#material: 5.70502 0.0390329 1 0 |0.0544|
+#add_dispersion_debye: 1 1.04953 9.231e-12 |0.0544|
+#material: 5.8755 0.040696 1 0 |0.0594|
+#add_dispersion_debye: 1 1.19655 9.231e-12 |0.0594|
+#material: 6.04283 0.0422849 1 0 |0.0645|
+#add_dispersion_debye: 1 1.34955 9.231e-12 |0.0645|
+#material: 6.20729 0.0438084 1 0 |0.0696|
+#add_dispersion_debye: 1 1.5083 9.231e-12 |0.0696|
+#material: 6.36912 0.0452736 1 0 |0.0747|
+#add_dispersion_debye: 1 1.67255 9.231e-12 |0.0747|
+#material: 6.52852 0.0466866 1 0 |0.0798|
+#add_dispersion_debye: 1 1.8421 9.231e-12 |0.0798|
+#material: 6.68567 0.0480524 1 0 |0.0848|
+#add_dispersion_debye: 1 2.01678 9.231e-12 |0.0848|
+#material: 6.84073 0.0493752 1 0 |0.0899|
+#add_dispersion_debye: 1 2.19642 9.231e-12 |0.0899|
+#material: 6.99384 0.0506588 1 0 |0.0950|
+#add_dispersion_debye: 1 2.38085 9.231e-12 |0.0950|
+#material: 7.14511 0.0519062 1 0 |0.1001|
+#add_dispersion_debye: 1 2.56996 9.231e-12 |0.1001|
+#material: 7.29467 0.0531203 1 0 |0.1052|
+#add_dispersion_debye: 1 2.7636 9.231e-12 |0.1052|
+#material: 7.44261 0.0543036 1 0 |0.1103|
+#add_dispersion_debye: 1 2.96166 9.231e-12 |0.1103|
+#material: 7.58903 0.055458 1 0 |0.1153|
+#add_dispersion_debye: 1 3.16402 9.231e-12 |0.1153|
+#material: 7.734 0.0565857 1 0 |0.1204|
+#add_dispersion_debye: 1 3.3706 9.231e-12 |0.1204|
+#material: 7.87761 0.0576883 1 0 |0.1255|
+#add_dispersion_debye: 1 3.58129 9.231e-12 |0.1255|
+#material: 8.01991 0.0587673 1 0 |0.1306|
+#add_dispersion_debye: 1 3.796 9.231e-12 |0.1306|
+#material: 8.16098 0.0598242 1 0 |0.1357|
+#add_dispersion_debye: 1 4.01464 9.231e-12 |0.1357|
+#material: 8.30087 0.0608602 1 0 |0.1407|
+#add_dispersion_debye: 1 4.23715 9.231e-12 |0.1407|
+#material: 8.43964 0.0618764 1 0 |0.1458|
+#add_dispersion_debye: 1 4.46343 9.231e-12 |0.1458|
+#material: 8.57734 0.0628739 1 0 |0.1509|
+#add_dispersion_debye: 1 4.69343 9.231e-12 |0.1509|
+#material: 8.71401 0.0638536 1 0 |0.1560|
+#add_dispersion_debye: 1 4.92708 9.231e-12 |0.1560|
+#material: 8.84969 0.0648165 1 0 |0.1611|
+#add_dispersion_debye: 1 5.1643 9.231e-12 |0.1611|
+#material: 8.98443 0.0657633 1 0 |0.1662|
+#add_dispersion_debye: 1 5.40505 9.231e-12 |0.1662|
+#material: 9.11827 0.0666948 1 0 |0.1712|
+#add_dispersion_debye: 1 5.64926 9.231e-12 |0.1712|
+#material: 9.25123 0.0676117 1 0 |0.1763|
+#add_dispersion_debye: 1 5.89687 9.231e-12 |0.1763|
+#material: 9.38335 0.0685145 1 0 |0.1814|
+#add_dispersion_debye: 1 6.14784 9.231e-12 |0.1814|
+#material: 9.51467 0.069404 1 0 |0.1865|
+#add_dispersion_debye: 1 6.40212 9.231e-12 |0.1865|
+#material: 9.64521 0.0702807 1 0 |0.1916|
+#add_dispersion_debye: 1 6.65965 9.231e-12 |0.1916|
+#material: 9.775 0.0711451 1 0 |0.1966|
+#add_dispersion_debye: 1 6.92039 9.231e-12 |0.1966|
+#material: 9.90407 0.0719976 1 0 |0.2017|
+#add_dispersion_debye: 1 7.1843 9.231e-12 |0.2017|
+#material: 10.0324 0.0728388 1 0 |0.2068|
+#add_dispersion_debye: 1 7.45133 9.231e-12 |0.2068|
+#material: 10.1601 0.073669 1 0 |0.2119|
+#add_dispersion_debye: 1 7.72144 9.231e-12 |0.2119|
+#material: 10.2872 0.0744886 1 0 |0.2170|
+#add_dispersion_debye: 1 7.99459 9.231e-12 |0.2170|
+#material: 10.4135 0.0752981 1 0 |0.2221|
+#add_dispersion_debye: 1 8.27074 9.231e-12 |0.2221|
+#material: 10.5393 0.0760978 1 0 |0.2271|
+#add_dispersion_debye: 1 8.54986 9.231e-12 |0.2271|
+#material: 10.6645 0.076888 1 0 |0.2322|
+#add_dispersion_debye: 1 8.83192 9.231e-12 |0.2322|
+#material: 10.7891 0.077669 1 0 |0.2373|
+#add_dispersion_debye: 1 9.11687 9.231e-12 |0.2373|
+#material: 10.9132 0.0784411 1 0 |0.2424|
+#add_dispersion_debye: 1 9.40468 9.231e-12 |0.2424|
+#material: 11.0367 0.0792047 1 0 |0.2475|
+#add_dispersion_debye: 1 9.69532 9.231e-12 |0.2475|
+#material: 11.1596 0.07996 1 0 |0.2525|
+#add_dispersion_debye: 1 9.98877 9.231e-12 |0.2525|
