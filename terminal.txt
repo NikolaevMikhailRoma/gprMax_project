@@ -1,0 +1,2 @@
+# api(inp_filename, geometry_only=True)
+python -m gprMax user_models/geometry.in --geometry-only

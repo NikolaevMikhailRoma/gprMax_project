@@ -1,6 +1,5 @@
 #material: 1 inf 1 0 pec
 #material: 1 0 1 0 free_space
-#material: 1 0 1 0 space
 #material: 3.67822 0.0109054 1 0 |0.0035|
 #add_dispersion_debye: 1 0.0191009 9.231e-12 |0.0035|
 #material: 3.93309 0.0165236 1 0 |0.0086|

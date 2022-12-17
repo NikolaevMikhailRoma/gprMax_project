@@ -34,7 +34,6 @@ def geometry_peplinski_box(x1, y1, z1, str1, str2, x0=0, y0=0, z0=0,
                            f7=1.5, f8=1, f9=1, f10=1, i1=50, ):
     """
     #fractal_box: f1 f2 f3 f4 f5 f6 f7 f8 f9 f10 i1 str1 str2 [i2] [c1]
-
     f1 f2 f3 are the lower left (x,y,z) coordinates of the parallelepiped,
     and f4 f5 f6 are the upper right(x,y,z) coordinates of the parallelepiped.
     f7 is the fractal dimension which, for an orthogonal parallelepiped, should take values between zero and three.
@@ -69,6 +68,9 @@ def create_input_file(domain,
                       directoty=r"C:\Users\user\Documents\gprMax_project\dataset",
                       name_of_file="empty.in",
                       antenna_name='GSSI_400',
+                      create_h5_geometry=False,
+                      write_file=True,
+
                       ):
     os.chdir(directoty)
     text = ''
@@ -86,24 +88,36 @@ def create_input_file(domain,
                                               round(domain[2] - 0.22, 3),
                                               dx)
 
+    ### add box
     box_number = 0
     box_base = str(box_number) + '_soil'
     text += material_peplinski_box(material_name=box_base)
     text += geometry_peplinski_box(*domain, str1=box_base, str2=box_base+'_fractal')
-    # print(text)
-    with open(name_of_file, 'w') as f:
-        f.write(text)
+    ### end add box
 
-        # f.write('хуй')
-
+    ### add geometry write
+    if create_h5_geometry:
+        text += f'#geometry_objects_write: 0 0 0 {domain[0]} {domain[1]} {domain[2]} geom'
+    ### end add geometry write
+    if write_file:
+        with open(name_of_file, 'w') as f:
+            f.write(text)
+    return text
 import time
 st=time.time()
 
-# os.chdir(r"C:\Users\user\Documents\gprMax_project\dataset")
-directoty = r"C:\Users\user\Documents\gprMax_project\dataset",
-name_of_file="empty.in"
-create_input_file(domain=[0.380, 0.380, 0.360])
+if __name__=="__main__":
 
-api(r"C:\Users\user\Documents\gprMax_project\dataset\empty.in", geometry_only=True)
+    # os.chdir(r"C:\Users\user\Documents\gprMax_project\dataset")
+    directoty = r"C:\Users\user\Documents\gprMax_project\dataset",
+    name_of_file= "../dataset/empty.in"
+    create_input_file(domain=[0.380, 0.380, 0.360],
+                      rx='0.002',
+                      antenna_name='GSSI_400',
+                      directoty=r"C:\Users\user\Documents\gprMax_project\dataset",
+                      name_of_file="../dataset/empty.in",
+                      create_h5_geometry=True, )
 
-print("----%.2f----"%(time.time()-st))
+    api(r"C:\Users\user\Documents\gprMax_project\dataset\empty.in", geometry_only=True)
+
+    print("----%.2f----"%(time.time()-st))

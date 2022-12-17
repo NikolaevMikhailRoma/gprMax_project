@@ -5,11 +5,11 @@ from gprMax.gprMax import api
 from tools.outputfiles_merge import get_output_data, merge_files
 
 # dmax = r".\GprmaxCode"
-# filename = 'user_models\cylinder_Bscan_GSSI_1500.in'
-filename = 'user_models\cylinder_Bscan_2D.in'
+filename = '../user_models/cylinder_Bscan_GSSI_1500.in'
+# filename = 'user_models\cylinder_Bscan_2D.in'
 
 
-# # api(filename, n=100, geometry_only=False, gpu = {0})
+api(filename, n=1, geometry_only=False, gpu = {0})
 # api(filename, n=10, geometry_only=False)
 # # api(filename, n=100, geometry_only=False)
 # merge_files(filename, removefiles=True)

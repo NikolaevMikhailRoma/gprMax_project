@@ -1,17 +1,15 @@
 #title: empty
+#domain: 1.4 1.4 0.008
+#dx_dy_dz: 0.008 0.008 0.008
+#time_window: 30e-9
+#waveform: ricker 1 800e6 my_ricker
+#hertzian_dipole: z 0.1 1.0 0 my_ricker
+#rx: 0.3 1.0 0
+#src_steps: 0.008 0 0
+#rx_steps: 0.008 0 0
 
-#domain: 0.38 0.38 0.36
+#material: 6 0 1 0 half_space
+#box: 0 0 0 1.4 1.0 0.008 half_space
 
-#dx_dy_dz: 0.002 0.002 0.002
-
-#time_window: 50e-9
-
-#python:
-from user_libs.antennas.GSSI import antenna_like_GSSI_400
-antenna_like_GSSI_400(0.190 + current_model_run * 0.002, 0.19, 0.14, resolution=0.002)
-#end_python:
-
-#soil_peplinski: 0.5 0.5 2.0 2.66 0.001 0.25 0_soil
-
-#fractal_box: 0 0 0 0.38 0.38 0.36 1.5 1 1 1 50 0_soil 0_soil_fractal
-
+#cylinder: 0.65 0.77 0 0.65 0.77 0.008 0.07 pec
+#cylinder: 0.3 0.04 0 0.3 0.04 0.008 0.06 pec
