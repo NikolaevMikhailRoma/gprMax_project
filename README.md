@@ -1,65 +1,62 @@
-# gprMax_project
+GPRMax Project: Neural Networks for Ground Penetrating Radar Data Processing
+This project implements methods for solving inverse problems in ground penetrating radar (GPR) data processing using neural networks.
+Project Overview
+The main objective is to process radargrams into electro-physical cross-sections. We focus on developing a simple, automated approach to GPR data interpretation.
+Dataset Generation
+Due to the difficulty of obtaining large volumes of labeled GPR data, we utilize the gprMax package on GPU to generate synthetic datasets. The simulation environment is set up on a local machine with PyCharm, CUDA, and a virtual environment. Two datasets have been created:
 
-В проекте реализованы методы для решения обрадной задачи обработки георадарных данных с помощью нейронных сетей.
-Презентация и результаты - Guide/ML_gpr.pptx
+A simple dataset
+A more complex dataset with added heterogeneities
 
-Описание кейса:
-1. Определение задач: 
-остановимся на простой обработке радарограмм в электро-физический разрез
-2. Особенности датасета и его генерации:
-Создать размеченные данные в большом объеме практически невозможно. В основе лежит генерация с помощью пакета gptMax на GPU. 
-Моделирование развернуто на локальной машине (ноут с видеокартой) (PyCharm, CUDA, виртуалка). Гайд по развертыванию найден на китайских форумах с доработками (VPN, adblock, translater to help).
-Итоговые модели следует сильно сокращать. Это сузит круг возможных задач для ML.
-Итоговый формат: Картинка -> Картинка (с возможностью выбора размера канала по физ. свойствам для различных задач).
-Создано два датасета: простой и усложненный неоднородностями (на встроенных функциях gprMax, самостоятельно собранная геометрия очень долго подгружается).
-3. Обработка Датасета:
-Была нарушена размерность с 128/128 на 126/125. Быть внимательнее, костыли добавлены.
-Добавлены фичи с модуля librosa
-4. Модели:
-несколько, уже стандартных, моделей обработки изображений, модель с какой-то публикации (слабый результат) и автокодировщики.
-5. Вывод: получен достаточно хороший результат без вмешательства пользователя и предобработки, человек так не может.
-_________________________________________________________
+Data Processing
+The dataset was processed to address dimensionality issues (126x125 instead of 128x128). Additional features were extracted using the librosa module.
+Neural Network Models
+We have implemented and compared several standard image processing models, including:
 
-ОПИСАНИЕ ФАЙЛОВ:
-ML.ipynb - обучение нейронки, описание внутри.
-Используемые технологии: сети U-NET, AE, PSP-Net, simple_U-NET (взято из публикации), Seq_NET, CAE, VCAE, librosa-featues (фичи с либрозы)
+U-NET
+Autoencoder (AE)
+PSP-Net
+Simplified U-NET (based on a published architecture)
+Seq_NET
+Convolutional Autoencoder (CAE)
+Variational Convolutional Autoencoder (VCAE)
 
-Реализованно:
-1. Решение обратной задачи
-1.1 Тесты с автокодировщиками
-2. Решение задачи повышения разрешение записи по горизонтали
-3. Задача деконволюции (НЕ РАБОТАЕТ)
+Project Structure
 
-Известные проблемы и планы на будущее:
-1. CAE - подать во внутреннее пространство информацию об проводимости (Т.е предположем, что мы знаем где находятся металлические объекты и хотим это учесть в предсказании)
-2. VAE - приспособить эту архитектуру для поиска ТОЛЬКО проводников
-3. Реализовать генетику на архитекруре simple_U-NET
-4. Проблема с датасетом_2, может стоит отдельно его преобразовать и залить
-5. Реальзовать lstm сети, аначале на простом датасете с изменением размерности временной записи
-________________________________________________________
-Датесеты находятся в облаке!!!
-Dataset/ - сгенерированный датасет_1 - простая 2D модель
-Dataset_2/ - сгенерированный датасет_2 - сложная 2D модель
-Dataset_3/ - сгенерированный датасет_3
-________________________________________________________
-gprmax_library.py - библиотека с функциями и классов для моделирования (решения прямой задачи).
-Известные проблемы:
-1. при конвертации в numpy массив размерность вместо 128/128 реализует 126/128
-2. пересмотреть смысл использования numpy массива, .png формат лучше для восприятия данных и публикации датасета
-________________________________________________________
-Tests/test_gprmax_library.py - тесты библиокеки по моделированию:
-Известные проблемы:
-1. Мало тестов
-2. В тест с numpy-массивом добавить оценку размерности
-________________________________________________________
-generation_models.py - код генерации модели
-Известные проблемы:
-1. отсутствуют тесты
-2. !!!!!!! Проблема с ошибкой к доступу памяти, решается конструкцией try-exception. Возможно на ubunty таких проблем не будет
-________________________________________________________
-gprMax_colab_template.ipynb - код для запуска gprMax в Colabе
-________________________________________________________
-terminal.txt - шпора для команд в терминале
+ML.ipynb: Main notebook for neural network training and evaluation
+Dataset/: Simple 2D model dataset
+Dataset_2/: Complex 2D model dataset
+Dataset_3/: Additional generated dataset
+gprmax_library.py: Library of functions and classes for forward problem modeling
+Tests/test_gprmax_library.py: Unit tests for the modeling library
+generation_models.py: Code for model generation
+gprMax_colab_template.ipynb: Template for running gprMax in Google Colab
+terminal.txt: Quick reference for terminal commands
 
+Implemented Features
+
+Inverse problem solution
+Horizontal resolution enhancement
+Deconvolution (currently non-functional)
+
+Known Issues and Future Work
+
+Incorporate conductivity information into the CAE model
+Adapt VAE architecture for conductor detection
+Implement genetic algorithms for the simplified U-NET architecture
+Address issues with Dataset_2 preprocessing
+Develop LSTM networks for simple datasets with varying time dimensions
+
+Data Availability
+The datasets are stored in the cloud due to their large size.
+Technical Details
+
+The project uses various deep learning architectures and signal processing techniques.
+GPU acceleration is employed for both data generation and model training.
+Custom data preprocessing steps are implemented to handle dimensionality issues.
+
+Conclusion
+This project demonstrates the potential of neural networks in automating GPR data interpretation, achieving results that surpass manual processing capabilities.
+For more detailed information, please refer to the presentation and results in Guide/ML_gpr.pptx.
 
 
