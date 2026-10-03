@@ -68,7 +68,8 @@ the radargram down to a bottleneck and a decoder that restores the cross-section
 
 ## Data Availability
 
-The datasets are stored in the cloud due to their large size.
+The datasets are stored in the cloud due to their large size. One of them is published on Kaggle:
+[gprMax pec-constant_space dataset](https://www.kaggle.com/datasets/mihailnikolaev/gprmax-pec-constant-space-dataset).
 
 ## Technical Details
 
