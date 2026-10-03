@@ -1,5 +1,7 @@
 # GPRMax Project: Neural Networks for Ground Penetrating Radar Data Processing
 
+> **Status:** archived research project, no further updates planned. Last version: December 2022.
+
 This project implements methods for solving inverse problems in ground penetrating radar (GPR) data processing using neural networks.
 
 ## Project Overview
@@ -27,6 +29,9 @@ We have implemented and compared several standard image processing models, inclu
 - Convolutional Autoencoder (CAE)
 - Variational Convolutional Autoencoder (VCAE)
 
+The best results came from the convolutional autoencoder (AE): an encoder that narrows
+the radargram down to a bottleneck and a decoder that restores the cross-section.
+
 ## Project Structure
 
 - `ML.ipynb`: Main notebook for neural network training and evaluation
@@ -45,7 +50,15 @@ We have implemented and compared several standard image processing models, inclu
 2. Horizontal resolution enhancement
 3. Deconvolution (currently non-functional)
 
-## Known Issues and Future Work
+## Known Issues
+
+1. Converting gprMax HDF5 output (`geom.h5` geometry and `.out` B-scans) to `.npy`
+   loses a few pixels: a 128×128 model comes out as 126×125.
+2. Data generation calls gprMax with `gpu={0}`, so it needs an NVIDIA GPU with CUDA;
+   expect CUDA setup problems. Running on Apple Silicon would be a useful addition.
+3. File paths are built with Windows backslashes, so the code runs on Windows only.
+
+## Ideas (not planned)
 
 1. Incorporate conductivity information into the CAE model
 2. Adapt VAE architecture for conductor detection
